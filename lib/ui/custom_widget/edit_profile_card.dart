@@ -5,9 +5,9 @@ typedef OnClick = Function();
 class EditProfileCard extends StatelessWidget {
   const EditProfileCard(
       {super.key,
-        required this.text,
-        required this.onClick,
-        required this.label});
+      required this.text,
+      required this.onClick,
+      required this.label});
 
   final String text;
   final String label;

@@ -8,8 +8,8 @@ part 'lesson.g.dart';
 class Lesson with _$Lesson {
   const factory Lesson(
       {required String id,
-        required List topics,
-        required List quizzes}) = _Lesson;
+      required List topics,
+      required List quizzes}) = _Lesson;
 
   factory Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
 }

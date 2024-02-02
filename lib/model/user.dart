@@ -8,17 +8,17 @@ part 'user.g.dart';
 class User with _$User {
   const factory User(
       {required String id,
-        required String name,
-        required String email,
-        required String role,
-        String? imageUrl,
-        @Default(0) int? typingSpeed,
-        @Default(0) double typingAccuracy,
-        @Default([]) List completedLevels,
-        @Default(0) int score,
-        @Default([]) List friends,
-        @Default(1) int level,
-        @Default(0) int levelProgress}) = _User;
+      required String name,
+      required String email,
+      required String role,
+      String? imageUrl,
+      @Default(0) int? typingSpeed,
+      @Default(0) double typingAccuracy,
+      @Default([]) List completedLevels,
+      @Default(0) int score,
+      @Default([]) List friends,
+      @Default(1) int level,
+      @Default(0) int levelProgress}) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

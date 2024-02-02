@@ -16,10 +16,10 @@ class HomeView extends StackedView<HomeViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      HomeViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    HomeViewModel viewModel,
+    Widget? child,
+  ) {
     return GameBody(
       body: Column(
         children: [
@@ -130,7 +130,7 @@ class HomeView extends StackedView<HomeViewModel> {
             data: NavigationBarThemeData(
               indicatorColor: Colors.white,
               labelTextStyle: MaterialStateProperty.resolveWith<TextStyle>(
-                    (Set<MaterialState> states) {
+                (Set<MaterialState> states) {
                   if (states.contains(MaterialState.selected)) {
                     return const TextStyle(
                       fontSize: 12,
@@ -242,7 +242,7 @@ class HomeView extends StackedView<HomeViewModel> {
 
   @override
   HomeViewModel viewModelBuilder(
-      BuildContext context,
-      ) =>
+    BuildContext context,
+  ) =>
       HomeViewModel();
 }

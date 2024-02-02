@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -11,10 +10,10 @@ class LessonsView extends StackedView<LessonsViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      LessonsViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    LessonsViewModel viewModel,
+    Widget? child,
+  ) {
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -37,7 +36,7 @@ class LessonsView extends StackedView<LessonsViewModel> {
 
   @override
   LessonsViewModel viewModelBuilder(
-      BuildContext context,
-      ) =>
+    BuildContext context,
+  ) =>
       LessonsViewModel();
 }

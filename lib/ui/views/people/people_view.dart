@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../custom_widget/game_search_textfield.dart';
@@ -10,10 +9,10 @@ class PeopleView extends StackedView<PeopleViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      PeopleViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    PeopleViewModel viewModel,
+    Widget? child,
+  ) {
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -33,7 +32,7 @@ class PeopleView extends StackedView<PeopleViewModel> {
 
   @override
   PeopleViewModel viewModelBuilder(
-      BuildContext context,
-      ) =>
+    BuildContext context,
+  ) =>
       PeopleViewModel();
 }

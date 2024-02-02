@@ -16,10 +16,10 @@ class LoginView extends StackedView<LoginViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      LoginViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    LoginViewModel viewModel,
+    Widget? child,
+  ) {
     return GameBody(
       body: SingleChildScrollView(
         child: Column(
@@ -66,7 +66,7 @@ class LoginView extends StackedView<LoginViewModel> {
 
   @override
   LoginViewModel viewModelBuilder(
-      BuildContext context,
-      ) =>
+    BuildContext context,
+  ) =>
       LoginViewModel();
 }

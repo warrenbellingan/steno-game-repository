@@ -8,10 +8,10 @@ class PlayView extends StackedView<PlayViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      PlayViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    PlayViewModel viewModel,
+    Widget? child,
+  ) {
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -114,7 +114,7 @@ class PlayView extends StackedView<PlayViewModel> {
 
   @override
   PlayViewModel viewModelBuilder(
-      BuildContext context,
-      ) =>
+    BuildContext context,
+  ) =>
       PlayViewModel();
 }

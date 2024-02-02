@@ -20,7 +20,7 @@ class AchievementCard extends StatelessWidget {
         color: Colors.red,
         borderRadius: BorderRadius.circular(12),
         border:
-        Border.all(color: Colors.black, width: 2, style: BorderStyle.solid),
+            Border.all(color: Colors.black, width: 2, style: BorderStyle.solid),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

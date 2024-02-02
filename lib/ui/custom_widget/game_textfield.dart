@@ -38,9 +38,9 @@ class GameTextField extends StatelessWidget {
               ),
               prefixIcon: icon == null
                   ? Icon(
-                Icons.email,
-                color: GameColor.primaryColor,
-              )
+                      Icons.email,
+                      color: GameColor.primaryColor,
+                    )
                   : icon,
             ),
           ),

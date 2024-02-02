@@ -15,10 +15,10 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      ForgotPasswordViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    ForgotPasswordViewModel viewModel,
+    Widget? child,
+  ) {
     return GameBody(
       body: SingleChildScrollView(
         child: Column(
@@ -45,7 +45,7 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
 
   @override
   ForgotPasswordViewModel viewModelBuilder(
-      BuildContext context,
-      ) =>
+    BuildContext context,
+  ) =>
       ForgotPasswordViewModel();
 }

@@ -8,8 +8,8 @@ part 'topic.g.dart';
 class Topic with _$Topic {
   const factory Topic(
       {required String id,
-        required String stenoId,
-        required String description}) = _Topic;
+      required String stenoId,
+      required String description}) = _Topic;
 
   factory Topic.fromJson(Map<String, dynamic> json) => _$TopicFromJson(json);
 }

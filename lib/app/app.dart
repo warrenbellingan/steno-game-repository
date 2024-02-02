@@ -1,6 +1,6 @@
-
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import '../services/authentication_service_impl.dart';
 import '../ui/bottom_sheets/notice/notice_sheet.dart';
 import '../ui/dialogs/info_alert/info_alert_dialog.dart';
 import '../ui/views/forgot_password/forgot_password_view.dart';
@@ -18,6 +18,7 @@ import '../ui/views/startup/startup_view.dart';
 import '../ui/views/strokes_multiplayer/strokes_multiplayer_view.dart';
 import '../ui/views/text_quiz/text_quiz_view.dart';
 import '../ui/views/typing_sound/typing_sound_view.dart';
+import 'package:Steno_Game/services/authentication_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -43,7 +44,8 @@ import '../ui/views/typing_sound/typing_sound_view.dart';
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    // @stacked-service
+    LazySingleton(classType: AuthenticationServiceImpl, asType: AuthenticationService),
+// @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),
