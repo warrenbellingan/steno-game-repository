@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:steno_game/ui/common/app_colors.dart';
-import 'package:steno_game/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-
+import '../../common/ui_helpers.dart';
 import 'info_alert_dialog_model.dart';
 
 const double _graphicSize = 60;
@@ -49,7 +47,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                       Text(
                         request.description!,
                         style:
-                            const TextStyle(fontSize: 14, color: kcMediumGrey),
+                            const TextStyle(fontSize: 14, color: Colors.grey),
                         maxLines: 3,
                         softWrap: true,
                       ),

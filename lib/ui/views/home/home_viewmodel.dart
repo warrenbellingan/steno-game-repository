@@ -1,36 +1,46 @@
-import 'package:steno_game/app/app.bottomsheets.dart';
-import 'package:steno_game/app/app.dialogs.dart';
-import 'package:steno_game/app/app.locator.dart';
-import 'package:steno_game/ui/common/app_strings.dart';
+import 'package:Steno_Game/app/app.locator.dart';
+import 'package:Steno_Game/app/app.router.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class HomeViewModel extends BaseViewModel {
-  final _dialogService = locator<DialogService>();
-  final _bottomSheetService = locator<BottomSheetService>();
+  final PageController pageController = PageController(initialPage: 0);
+  final _navigationService = locator<NavigationService>();
+  int currentPageIndex = 0;
 
-  String get counterLabel => 'Counter is: $_counter';
+  // String keyText = '';
+  // FocusNode focusNode = FocusNode();
+  // void onKeyReceived(RawKeyEvent event) {
+  //   final keyLabel = event.character!;
+  //   if (keyLabel.isNotEmpty) {
+  //     keyText = keyLabel;
+  //     rebuildUi();
+  //   }
+  // }
+  // bntPressed(BuildContext context) {
+  //   FocusScope.of(context).requestFocus(focusNode);
+  // }
 
-  int _counter = 0;
-
-  void incrementCounter() {
-    _counter++;
+  void onPageChanged(int index) {
+    currentPageIndex = index;
     rebuildUi();
   }
 
-  void showDialog() {
-    _dialogService.showCustomDialog(
-      variant: DialogType.infoAlert,
-      title: 'Stacked Rocks!',
-      description: 'Give stacked $_counter stars on Github',
+  void changePage(int index) {
+    pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
     );
   }
 
-  void showBottomSheet() {
-    _bottomSheetService.showCustomSheet(
-      variant: BottomSheetType.notice,
-      title: ksHomeBottomSheetTitle,
-      description: ksHomeBottomSheetDescription,
-    );
+  void onDestinationSelected(int index) {
+    currentPageIndex = index;
+    changePage(currentPageIndex);
+  }
+
+  void goToProfileView() {
+    _navigationService.navigateToProfileView();
   }
 }
