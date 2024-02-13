@@ -1,4 +1,5 @@
 import 'package:Steno_Game/ui/common/ui_helpers.dart';
+import 'package:Steno_Game/ui/custom_widget/game_search_textfield.dart';
 import 'package:Steno_Game/ui/views/people/people_view.dart';
 import 'package:Steno_Game/ui/views/play/play_view.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,7 @@ class HomeView extends StackedView<HomeViewModel> {
                 SingleChildScrollView(
                   child: Column(
                     children: [
+                      GameSearchTextField(),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 30),
                         width: 300,
@@ -108,16 +110,19 @@ class HomeView extends StackedView<HomeViewModel> {
                         ],
                       ),
                       AchievementCard(
-                        label: 'Achievement 1',
                         isComplete: true,
+                        title: "Noob",
+                        description: "Reach Level 5",
                       ),
                       AchievementCard(
-                        label: 'Achievement 2',
-                        isComplete: false,
+                        isComplete: true,
+                        title: "Pro",
+                        description: "Reach Level 20",
                       ),
                       AchievementCard(
-                        label: 'Achievement 3',
                         isComplete: false,
+                        title: "Expert",
+                        description: "Reach Level 50",
                       ),
                     ],
                   ),

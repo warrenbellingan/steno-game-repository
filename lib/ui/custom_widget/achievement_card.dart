@@ -1,23 +1,25 @@
+import 'package:Steno_Game/ui/constants/game_color.dart';
 import 'package:flutter/material.dart';
 
 class AchievementCard extends StatelessWidget {
   AchievementCard({
     super.key,
-    required this.label,
     required this.isComplete,
+    required this.title,
+    required this.description,
   });
 
   bool isComplete;
-  final String label;
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8),
       width: double.infinity,
-      height: 120,
       decoration: BoxDecoration(
-        color: Colors.red,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         border:
             Border.all(color: Colors.black, width: 2, style: BorderStyle.solid),
@@ -32,7 +34,7 @@ class AchievementCard extends StatelessWidget {
               vertical: 4,
             ),
             decoration: BoxDecoration(
-              color: isComplete ? Colors.blue : Colors.grey,
+              color: isComplete ? GameColor.primaryColor : GameColor.secondaryColor,
               borderRadius: BorderRadius.circular(9),
             ),
             child: Text(
@@ -47,29 +49,23 @@ class AchievementCard extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Icon(
-                  Icons.bar_chart,
-                  size: 40,
-                  color: Colors.white,
-                ),
+
                 Text(
-                  label,
+                  title,
                   style: TextStyle(
                     fontSize: 24,
-                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2,
+                    color: GameColor.secondaryBackgroundColor,
                   ),
                 ),
                 Text(
-                  '100%',
+                  description,
                   style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 1,
+                    fontSize: 20,
                   ),
                 ),
               ],
@@ -78,13 +74,7 @@ class AchievementCard extends StatelessWidget {
           Container(
             margin: EdgeInsets.all(8),
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Colors.white,
-                Colors.lightBlueAccent,
-                Colors.lightBlue,
-                Colors.blueAccent,
-                Colors.blue
-              ]),
+              color: GameColor.primaryColor,
               borderRadius: BorderRadius.circular(8),
             ),
             height: 10,

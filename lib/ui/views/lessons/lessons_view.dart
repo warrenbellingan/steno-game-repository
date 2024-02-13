@@ -17,16 +17,64 @@ class LessonsView extends StackedView<LessonsViewModel> {
     return SingleChildScrollView(
       child: Column(
         children: [
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(color: Colors.white),
+            width: double.infinity,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 6, horizontal: 4),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 2,
+                        style: BorderStyle.solid,
+                      ),
+                    ),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      "STROKES",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.3,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 6, horizontal: 4),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 2,
+                        style: BorderStyle.solid,
+                      ),
+                    ),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      "TYPING",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.3,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              GameChip(
-                label: 'Strokes',
-              ),
-              GameChip(label: 'Typing'),
+              GameChip(label: "Offline"),
+              GameChip(label: "Online"),
             ],
           ),
-          LessonMainCard(label: 'Lesson 1'),
           LessonMainCard(label: 'Lesson 2'),
           LessonMainCard(label: 'Lesson 3'),
         ],

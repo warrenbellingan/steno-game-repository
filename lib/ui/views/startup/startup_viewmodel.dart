@@ -1,7 +1,6 @@
 import 'package:Steno_Game/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-
 import '../../../app/app.locator.dart';
 
 class StartupViewModel extends BaseViewModel {
@@ -14,6 +13,6 @@ class StartupViewModel extends BaseViewModel {
     // This is where you can make decisions on where your app should navigate when
     // you have custom startup logic
 
-    _navigationService.replaceWithLoginView();
+    _navigationService.replaceWithStrokesMultiplayerView();
   }
 }
