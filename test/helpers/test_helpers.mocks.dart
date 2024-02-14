@@ -12,6 +12,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i4;
 import 'package:stacked_services/stacked_services.dart' as _i3;
 import 'package:Steno_Game/exception/game_exception.dart' as _i9;
+import 'package:Steno_Game/model/user.dart' as _i10;
 import 'package:Steno_Game/services/authentication_service.dart' as _i8;
 
 // ignore_for_file: type=lint
@@ -747,7 +748,7 @@ class MockAuthenticationService extends _i1.Mock
       ) as _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>);
 
   @override
-  _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>> login({
+  _i6.Future<_i2.Either<_i9.GameException, _i10.User>> login({
     required String? email,
     required String? password,
   }) =>
@@ -760,9 +761,8 @@ class MockAuthenticationService extends _i1.Mock
             #password: password,
           },
         ),
-        returnValue:
-            _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>.value(
-                _FakeEither_0<_i9.GameException, _i2.None<dynamic>>(
+        returnValue: _i6.Future<_i2.Either<_i9.GameException, _i10.User>>.value(
+            _FakeEither_0<_i9.GameException, _i10.User>(
           this,
           Invocation.method(
             #login,
@@ -774,8 +774,8 @@ class MockAuthenticationService extends _i1.Mock
           ),
         )),
         returnValueForMissingStub:
-            _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>.value(
-                _FakeEither_0<_i9.GameException, _i2.None<dynamic>>(
+            _i6.Future<_i2.Either<_i9.GameException, _i10.User>>.value(
+                _FakeEither_0<_i9.GameException, _i10.User>(
           this,
           Invocation.method(
             #login,
@@ -786,7 +786,7 @@ class MockAuthenticationService extends _i1.Mock
             },
           ),
         )),
-      ) as _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>);
+      ) as _i6.Future<_i2.Either<_i9.GameException, _i10.User>>);
 
   @override
   _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>> logout() =>

@@ -19,6 +19,7 @@ import '../ui/views/strokes_multiplayer/strokes_multiplayer_view.dart';
 import '../ui/views/text_quiz/text_quiz_view.dart';
 import '../ui/views/typing_sound/typing_sound_view.dart';
 import 'package:Steno_Game/services/authentication_service.dart';
+import 'package:Steno_Game/ui/views/achievement/achievement_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -38,13 +39,15 @@ import 'package:Steno_Game/services/authentication_service.dart';
     MaterialRoute(page: StrokesMultiplayerView),
     MaterialRoute(page: TextQuizView),
     MaterialRoute(page: TypingSoundView),
+    MaterialRoute(page: AchievementView),
 // @stacked-route
   ],
   dependencies: [
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    LazySingleton(classType: AuthenticationServiceImpl, asType: AuthenticationService),
+    LazySingleton(
+        classType: AuthenticationServiceImpl, asType: AuthenticationService),
 // @stacked-service
   ],
   bottomsheets: [

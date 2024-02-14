@@ -76,7 +76,10 @@ class _PainterState extends State<Painter> {
             SizedBox(
               height: imageSize,
               child: CustomPaint(
-                painter: DrawingPainter(drawingPoints: drawingPoints, imageSize: imageSize, ),
+                painter: DrawingPainter(
+                  drawingPoints: drawingPoints,
+                  imageSize: imageSize,
+                ),
                 child: GestureDetector(
                   onPanStart: (details) {
                     setState(() {
@@ -134,7 +137,8 @@ class DrawingPainter extends CustomPainter {
 
       for (var i = 0; i < drawingPoint.offsets.length; i++) {
         if (!(drawingPoint.offsets[i] > Offset(2, 2) &&
-            drawingPoint.offsets[i] < Offset(imageSize - 2, imageSize - 2))) continue;
+            drawingPoint.offsets[i] < Offset(imageSize - 2, imageSize - 2)))
+          continue;
         var notLastOffset = i != drawingPoint.offsets.length - 1;
 
         if (notLastOffset) {

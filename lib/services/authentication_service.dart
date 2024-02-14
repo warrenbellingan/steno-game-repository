@@ -1,14 +1,18 @@
 import 'package:Steno_Game/exception/game_exception.dart';
 import 'package:dartz/dartz.dart';
 
-abstract interface class AuthenticationService {
+import '../model/user.dart';
 
+abstract interface class AuthenticationService {
   bool get isLoggedIn;
 
   Future<Either<GameException, None>> signUp(
-      {required String name, required String email, required String password, required String role});
+      {required String name,
+      required String email,
+      required String password,
+      required String role});
 
-  Future<Either<GameException, None>> login(
+  Future<Either<GameException, User>> login(
       {required String email, required String password});
 
   Future<Either<GameException, None>> logout();
@@ -18,7 +22,9 @@ abstract interface class AuthenticationService {
   Future<Either<GameException, None>> updateName({required String newName});
 
   Future<Either<GameException, None>> updateEmail(
-      {required String currentEmail, required String newEmail, required String password});
+      {required String currentEmail,
+      required String newEmail,
+      required String password});
 
   Future<Either<GameException, None>> updatePassword(
       {required String currentPassword, required String newPassword});

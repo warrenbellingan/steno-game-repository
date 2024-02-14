@@ -34,7 +34,9 @@ class AchievementCard extends StatelessWidget {
               vertical: 4,
             ),
             decoration: BoxDecoration(
-              color: isComplete ? GameColor.primaryColor : GameColor.secondaryColor,
+              color: isComplete
+                  ? GameColor.primaryColor
+                  : GameColor.secondaryColor,
               borderRadius: BorderRadius.circular(9),
             ),
             child: Text(
@@ -52,7 +54,6 @@ class AchievementCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 Text(
                   title,
                   style: TextStyle(

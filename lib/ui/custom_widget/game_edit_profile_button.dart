@@ -31,16 +31,15 @@ class GameEditProfileButton extends StatelessWidget {
           ),
         ),
         child: Text(
-            title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 1.5,
-              color: Colors.black,
-            ),
+          title,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 1.5,
+            color: Colors.black,
           ),
-
+        ),
       ),
     );
   }

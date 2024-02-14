@@ -4,7 +4,7 @@ class GameException implements Exception {
   GameException(this.message);
 
   @override
-  String toString(){
+  String toString() {
     return message;
   }
 }
