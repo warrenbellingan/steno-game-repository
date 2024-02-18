@@ -5,10 +5,10 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i18;
+import 'package:flutter/material.dart' as _i25;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i19;
+import 'package:stacked_services/stacked_services.dart' as _i26;
 import 'package:Steno_Game/ui/views/achievement/achievement_view.dart' as _i17;
 import 'package:Steno_Game/ui/views/forgot_password/forgot_password_view.dart'
     as _i4;
@@ -18,15 +18,27 @@ import 'package:Steno_Game/ui/views/lessons/lessons_view.dart' as _i6;
 import 'package:Steno_Game/ui/views/login/login_view.dart' as _i7;
 import 'package:Steno_Game/ui/views/people/people_view.dart' as _i8;
 import 'package:Steno_Game/ui/views/picture_quiz/picture_quiz_view.dart' as _i9;
+import 'package:Steno_Game/ui/views/picture_topic/picture_topic_view.dart'
+    as _i18;
 import 'package:Steno_Game/ui/views/play/play_view.dart' as _i10;
 import 'package:Steno_Game/ui/views/profile/profile_view.dart' as _i11;
+import 'package:Steno_Game/ui/views/quiz_game_stroke/quiz_game_stroke_view.dart'
+    as _i22;
 import 'package:Steno_Game/ui/views/sign_in/sign_in_view.dart' as _i12;
 import 'package:Steno_Game/ui/views/speed_typing/speed_typing_view.dart'
     as _i13;
 import 'package:Steno_Game/ui/views/startup/startup_view.dart' as _i3;
+import 'package:Steno_Game/ui/views/stroke_exercise/stroke_exercise_view.dart'
+    as _i23;
 import 'package:Steno_Game/ui/views/strokes_multiplayer/strokes_multiplayer_view.dart'
     as _i14;
+import 'package:Steno_Game/ui/views/strokes_play/strokes_play_view.dart'
+    as _i20;
 import 'package:Steno_Game/ui/views/text_quiz/text_quiz_view.dart' as _i15;
+import 'package:Steno_Game/ui/views/text_topic/text_topic_view.dart' as _i19;
+import 'package:Steno_Game/ui/views/typing_exercise/typing_exercise_view.dart'
+    as _i24;
+import 'package:Steno_Game/ui/views/typing_play/typing_play_view.dart' as _i21;
 import 'package:Steno_Game/ui/views/typing_sound/typing_sound_view.dart'
     as _i16;
 
@@ -63,6 +75,20 @@ class Routes {
 
   static const achievementView = '/achievement-view';
 
+  static const pictureTopicView = '/picture-topic-view';
+
+  static const textTopicView = '/text-topic-view';
+
+  static const strokesPlayView = '/strokes-play-view';
+
+  static const typingPlayView = '/typing-play-view';
+
+  static const quizGameStrokeView = '/quiz-game-stroke-view';
+
+  static const strokeExerciseView = '/stroke-exercise-view';
+
+  static const typingExerciseView = '/typing-exercise-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -80,6 +106,13 @@ class Routes {
     textQuizView,
     typingSoundView,
     achievementView,
+    pictureTopicView,
+    textTopicView,
+    strokesPlayView,
+    typingPlayView,
+    quizGameStrokeView,
+    strokeExerciseView,
+    typingExerciseView,
   };
 }
 
@@ -149,102 +182,172 @@ class StackedRouter extends _i1.RouterBase {
       Routes.achievementView,
       page: _i17.AchievementView,
     ),
+    _i1.RouteDef(
+      Routes.pictureTopicView,
+      page: _i18.PictureTopicView,
+    ),
+    _i1.RouteDef(
+      Routes.textTopicView,
+      page: _i19.TextTopicView,
+    ),
+    _i1.RouteDef(
+      Routes.strokesPlayView,
+      page: _i20.StrokesPlayView,
+    ),
+    _i1.RouteDef(
+      Routes.typingPlayView,
+      page: _i21.TypingPlayView,
+    ),
+    _i1.RouteDef(
+      Routes.quizGameStrokeView,
+      page: _i22.QuizGameStrokeView,
+    ),
+    _i1.RouteDef(
+      Routes.strokeExerciseView,
+      page: _i23.StrokeExerciseView,
+    ),
+    _i1.RouteDef(
+      Routes.typingExerciseView,
+      page: _i24.TypingExerciseView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.ForgotPasswordView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.ForgotPasswordView(),
         settings: data,
       );
     },
     _i5.LessonQuizView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.LessonQuizView(),
         settings: data,
       );
     },
     _i6.LessonsView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.LessonsView(),
         settings: data,
       );
     },
     _i7.LoginView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.LoginView(),
         settings: data,
       );
     },
     _i8.PeopleView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.PeopleView(),
         settings: data,
       );
     },
     _i9.PictureQuizView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.PictureQuizView(),
         settings: data,
       );
     },
     _i10.PlayView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.PlayView(),
         settings: data,
       );
     },
     _i11.ProfileView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.ProfileView(),
         settings: data,
       );
     },
     _i12.SignInView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.SignInView(),
         settings: data,
       );
     },
     _i13.SpeedTypingView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.SpeedTypingView(),
         settings: data,
       );
     },
     _i14.StrokesMultiplayerView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.StrokesMultiplayerView(),
         settings: data,
       );
     },
     _i15.TextQuizView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.TextQuizView(),
         settings: data,
       );
     },
     _i16.TypingSoundView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.TypingSoundView(),
         settings: data,
       );
     },
     _i17.AchievementView: (data) {
-      return _i18.MaterialPageRoute<dynamic>(
+      return _i25.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.AchievementView(),
+        settings: data,
+      );
+    },
+    _i18.PictureTopicView: (data) {
+      return _i25.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i18.PictureTopicView(),
+        settings: data,
+      );
+    },
+    _i19.TextTopicView: (data) {
+      return _i25.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i19.TextTopicView(),
+        settings: data,
+      );
+    },
+    _i20.StrokesPlayView: (data) {
+      return _i25.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i20.StrokesPlayView(),
+        settings: data,
+      );
+    },
+    _i21.TypingPlayView: (data) {
+      return _i25.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i21.TypingPlayView(),
+        settings: data,
+      );
+    },
+    _i22.QuizGameStrokeView: (data) {
+      return _i25.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i22.QuizGameStrokeView(),
+        settings: data,
+      );
+    },
+    _i23.StrokeExerciseView: (data) {
+      return _i25.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i23.StrokeExerciseView(),
+        settings: data,
+      );
+    },
+    _i24.TypingExerciseView: (data) {
+      return _i25.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i24.TypingExerciseView(),
         settings: data,
       );
     },
@@ -257,7 +360,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i19.NavigationService {
+extension NavigatorStateExtension on _i26.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -482,6 +585,104 @@ extension NavigatorStateExtension on _i19.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToPictureTopicView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.pictureTopicView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToTextTopicView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.textTopicView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToStrokesPlayView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.strokesPlayView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToTypingPlayView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.typingPlayView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToQuizGameStrokeView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.quizGameStrokeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToStrokeExerciseView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.strokeExerciseView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToTypingExerciseView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.typingExerciseView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -700,6 +901,104 @@ extension NavigatorStateExtension on _i19.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.achievementView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithPictureTopicView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.pictureTopicView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithTextTopicView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.textTopicView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithStrokesPlayView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.strokesPlayView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithTypingPlayView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.typingPlayView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithQuizGameStrokeView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.quizGameStrokeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithStrokeExerciseView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.strokeExerciseView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithTypingExerciseView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.typingExerciseView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

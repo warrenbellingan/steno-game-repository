@@ -20,6 +20,13 @@ import '../ui/views/text_quiz/text_quiz_view.dart';
 import '../ui/views/typing_sound/typing_sound_view.dart';
 import 'package:Steno_Game/services/authentication_service.dart';
 import 'package:Steno_Game/ui/views/achievement/achievement_view.dart';
+import 'package:Steno_Game/ui/views/picture_topic/picture_topic_view.dart';
+import 'package:Steno_Game/ui/views/text_topic/text_topic_view.dart';
+import 'package:Steno_Game/ui/views/strokes_play/strokes_play_view.dart';
+import 'package:Steno_Game/ui/views/typing_play/typing_play_view.dart';
+import 'package:Steno_Game/ui/views/quiz_game_stroke/quiz_game_stroke_view.dart';
+import 'package:Steno_Game/ui/views/stroke_exercise/stroke_exercise_view.dart';
+import 'package:Steno_Game/ui/views/typing_exercise/typing_exercise_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -40,6 +47,13 @@ import 'package:Steno_Game/ui/views/achievement/achievement_view.dart';
     MaterialRoute(page: TextQuizView),
     MaterialRoute(page: TypingSoundView),
     MaterialRoute(page: AchievementView),
+    MaterialRoute(page: PictureTopicView),
+    MaterialRoute(page: TextTopicView),
+    MaterialRoute(page: StrokesPlayView),
+    MaterialRoute(page: TypingPlayView),
+    MaterialRoute(page: QuizGameStrokeView),
+    MaterialRoute(page: StrokeExerciseView),
+    MaterialRoute(page: TypingExerciseView),
 // @stacked-route
   ],
   dependencies: [

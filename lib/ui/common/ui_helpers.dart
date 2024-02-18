@@ -20,7 +20,7 @@ const Widget verticalSpaceLarge = SizedBox(height: _largeSize);
 const Widget verticalSpaceMassive = SizedBox(height: _massiveSize);
 
 BoxShadow primaryShadow() => BoxShadow(
-      color: Color(0xFF948D8D),
+      color: const Color(0xFF948D8D),
       offset: Offset.fromDirection(-15, -4),
       blurStyle: BlurStyle.normal,
       spreadRadius: 1,

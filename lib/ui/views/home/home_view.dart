@@ -1,13 +1,13 @@
 import 'package:Steno_Game/ui/common/ui_helpers.dart';
+import 'package:Steno_Game/ui/constants/game_color.dart';
 import 'package:Steno_Game/ui/custom_widget/game_search_textfield.dart';
+import 'package:Steno_Game/ui/views/achievement/achievement_view.dart';
 import 'package:Steno_Game/ui/views/people/people_view.dart';
 import 'package:Steno_Game/ui/views/play/play_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../constants/game_ui_text.dart';
-import '../../custom_widget/achievement_card.dart';
 import '../../custom_widget/game_body.dart';
-import '../../custom_widget/game_chip.dart';
 import '../../custom_widget/player_profile.dart';
 import '../lessons/lessons_view.dart';
 import 'home_viewmodel.dart';
@@ -25,7 +25,7 @@ class HomeView extends StackedView<HomeViewModel> {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -34,10 +34,21 @@ class HomeView extends StackedView<HomeViewModel> {
               ],
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
                   onTap: viewModel.goToProfileView,
                   child: PlayerProfile(),
+                ),
+                Text(
+                  "Score: 199",
+                  style: TextStyle(
+                    color: GameColor.primaryColor,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    wordSpacing: 2,
+                    letterSpacing: 1,
+                  ),
                 ),
               ],
             ),
@@ -55,41 +66,66 @@ class HomeView extends StackedView<HomeViewModel> {
                   child: Column(
                     children: [
                       GameSearchTextField(),
+                      SizedBox(
+                        height: 24,
+                      ),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 30),
-                        width: 300,
-                        height: 350,
+                        margin:
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                        width: double.infinity,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(width: 5, color: Colors.black)),
-                        child: Column(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: GameColor.primaryGradient,
+                          boxShadow: [primaryShadow()],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Expanded(child: Container()),
-                            Container(
-                              alignment: Alignment.center,
-                              width: double.infinity,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 6,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(4),
-                                  bottomRight: Radius.circular(4),
-                                ),
-                              ),
-                              child: Text(
-                                'HINT',
-                                style: TextStyle(
+                            Text(
+                              'Practice Strokes',
+                              style: TextStyle(
                                   color: Colors.white,
-                                  letterSpacing: 2,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 34,
-                                ),
-                              ),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 1),
                             ),
+                            Icon(
+                              Icons.edit,
+                              color: Colors.white,
+                              size: 30,
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin:
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: GameColor.primaryGradient,
+                          boxShadow: [primaryShadow()],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Practice Typing',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 1),
+                            ),
+                            Icon(
+                              Icons.keyboard,
+                              color: Colors.white,
+                              size: 30,
+                            )
                           ],
                         ),
                       ),
@@ -98,35 +134,7 @@ class HomeView extends StackedView<HomeViewModel> {
                 ),
                 LessonsView(),
                 PlayView(),
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          GameChip(label: 'All'),
-                          GameChip(label: 'Completed'),
-                          GameChip(label: 'Incomplete'),
-                        ],
-                      ),
-                      AchievementCard(
-                        isComplete: true,
-                        title: "Noob",
-                        description: "Reach Level 5",
-                      ),
-                      AchievementCard(
-                        isComplete: true,
-                        title: "Pro",
-                        description: "Reach Level 20",
-                      ),
-                      AchievementCard(
-                        isComplete: false,
-                        title: "Expert",
-                        description: "Reach Level 50",
-                      ),
-                    ],
-                  ),
-                ),
+                AchievementView(),
                 PeopleView(),
               ],
             ),
@@ -138,13 +146,13 @@ class HomeView extends StackedView<HomeViewModel> {
                 (Set<MaterialState> states) {
                   if (states.contains(MaterialState.selected)) {
                     return const TextStyle(
-                      fontSize: 12,
+                      fontSize: 11,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFFE35629),
+                      color: GameColor.primaryColor,
                     );
                   } else {
                     return const TextStyle(
-                      fontSize: 11,
+                      fontSize: 10,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
                     );
@@ -162,60 +170,60 @@ class HomeView extends StackedView<HomeViewModel> {
                 NavigationDestination(
                   icon: Icon(
                     Icons.home,
-                    size: 30,
+                    size: 25,
                   ),
                   selectedIcon: Icon(
                     Icons.home,
-                    color: Colors.red,
-                    size: 40,
+                    color: GameColor.primaryColor,
+                    size: 30,
                   ),
                   label: GameUIText.menuText,
                 ),
                 NavigationDestination(
                   icon: Icon(
                     Icons.play_lesson_rounded,
-                    size: 30,
+                    size: 25,
                   ),
                   selectedIcon: Icon(
                     Icons.play_lesson_rounded,
-                    color: Colors.red,
-                    size: 40,
+                    color: GameColor.primaryColor,
+                    size: 30,
                   ),
                   label: GameUIText.lessonText,
                 ),
                 NavigationDestination(
                   icon: Icon(
                     Icons.play_circle,
-                    size: 30,
+                    size: 25,
                   ),
                   selectedIcon: Icon(
                     Icons.play_circle,
-                    color: Colors.red,
-                    size: 40,
+                    color: GameColor.primaryColor,
+                    size: 30,
                   ),
                   label: GameUIText.playText,
                 ),
                 NavigationDestination(
                   icon: Icon(
                     Icons.badge_rounded,
-                    size: 30,
+                    size: 25,
                   ),
                   selectedIcon: Icon(
                     Icons.badge_rounded,
-                    color: Colors.red,
-                    size: 40,
+                    color: GameColor.primaryColor,
+                    size: 30,
                   ),
                   label: GameUIText.achievementText,
                 ),
                 NavigationDestination(
                   icon: Icon(
                     Icons.people_alt_outlined,
-                    size: 30,
+                    size: 25,
                   ),
                   selectedIcon: Icon(
                     Icons.people_alt_outlined,
-                    color: Colors.red,
-                    size: 40,
+                    color: GameColor.primaryColor,
+                    size: 30,
                   ),
                   label: GameUIText.peopleText,
                 ),

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:Steno_Game/exception/game_exception.dart';
 import 'package:Steno_Game/model/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
