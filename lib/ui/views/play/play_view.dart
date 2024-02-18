@@ -17,52 +17,58 @@ class PlayView extends StackedView<PlayViewModel> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            padding: EdgeInsets.only(top: 8),
-            margin: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-            width: double.infinity,
-            height: 220,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              gradient: GameColor.primaryGradient,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'STROKES',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5),
-                ),
-                Icon(Icons.edit, size: 100, color: Colors.white),
-              ],
+          GestureDetector(
+            onTap: viewModel.goToStrokePlayPage,
+            child: Container(
+              padding: EdgeInsets.only(top: 8),
+              margin: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+              width: double.infinity,
+              height: 220,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                gradient: GameColor.primaryGradient,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'STROKES',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5),
+                  ),
+                  Icon(Icons.edit, size: 100, color: Colors.white),
+                ],
+              ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(top: 8),
-            margin: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-            width: double.infinity,
-            height: 220,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              gradient: GameColor.primaryGradient,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'TYPING',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5),
-                ),
-                Icon(Icons.keyboard, size: 100, color: Colors.white),
-              ],
+          GestureDetector(
+            onTap: viewModel.goToTypingPlayPage,
+            child: Container(
+              padding: EdgeInsets.only(top: 8),
+              margin: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+              width: double.infinity,
+              height: 220,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                gradient: GameColor.primaryGradient,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'TYPING',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5),
+                  ),
+                  Icon(Icons.keyboard, size: 100, color: Colors.white),
+                ],
+              ),
             ),
           ),
         ],

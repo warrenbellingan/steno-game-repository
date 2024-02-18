@@ -5,6 +5,7 @@ import '../../constants/game_png.dart';
 import '../../custom_widget/game_body.dart';
 import '../../custom_widget/game_button.dart';
 import '../../custom_widget/game_image.dart';
+import '../../custom_widget/game_loading.dart';
 import '../../custom_widget/game_password_text_field.dart';
 import '../../custom_widget/game_textButton.dart';
 import '../../custom_widget/game_textfield.dart';
@@ -22,7 +23,7 @@ class LoginView extends StackedView<LoginViewModel> {
   ) {
     return GameBody(
       body: SingleChildScrollView(
-        child: Column(
+        child:viewModel.isBusy ? GameLoading() : Column(
           children: [
             GameTitleText(text: GameUIText.welcomeText),
             SizedBox(

@@ -154,7 +154,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
               ),
             ],
           ),
-          GameButton(text: 'Log out', onClick: () {}),
+          GameButton(text: 'Log out', onClick: viewModel.logOut),
         ],
       ),
     ));

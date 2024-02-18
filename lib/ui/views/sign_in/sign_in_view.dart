@@ -32,6 +32,7 @@ class SignInView extends StackedView<SignInViewModel> {
             height: 25,
           ),
           DropdownMenu(
+            controller: viewModel.roleController,
             hintText: GameUIText.roleText,
             menuStyle: MenuStyle(
               alignment: Alignment.centerLeft,
