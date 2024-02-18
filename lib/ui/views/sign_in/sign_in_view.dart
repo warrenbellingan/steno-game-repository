@@ -1,6 +1,7 @@
 import 'package:Steno_Game/ui/constants/game_color.dart';
 import 'package:Steno_Game/ui/constants/game_png.dart';
 import 'package:Steno_Game/ui/constants/game_ui_text.dart';
+import 'package:Steno_Game/ui/custom_widget/game_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../custom_widget/game_bar.dart';
@@ -22,7 +23,7 @@ class SignInView extends StackedView<SignInViewModel> {
     Widget? child,
   ) {
     return GameBody(
-        body: SingleChildScrollView(
+        body: viewModel.isBusy ? GameLoading(label: "Creating Account",) : SingleChildScrollView(
       child: Column(
         children: [
           GameBar(),
@@ -76,10 +77,10 @@ class SignInView extends StackedView<SignInViewModel> {
             label: GameUIText.passwordText,
           ),
           GamePasswordTextField(
-            controller: viewModel.passwordController,
+            controller: viewModel.confirmPasswordController,
             label: GameUIText.confirmPassText,
           ),
-          GameButton(text: GameUIText.createText, onClick: () {})
+          GameButton(text: GameUIText.createText, onClick:viewModel.signUp)
         ],
       ),
     ));

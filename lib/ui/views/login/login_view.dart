@@ -22,8 +22,8 @@ class LoginView extends StackedView<LoginViewModel> {
     Widget? child,
   ) {
     return GameBody(
-      body: SingleChildScrollView(
-        child:viewModel.isBusy ? GameLoading() : Column(
+      body: viewModel.isBusy ? GameLoading(label: "Logging In",) :SingleChildScrollView(
+        child: Column(
           children: [
             GameTitleText(text: GameUIText.welcomeText),
             SizedBox(
