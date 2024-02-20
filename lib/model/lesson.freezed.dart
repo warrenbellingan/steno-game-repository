@@ -21,6 +21,7 @@ Lesson _$LessonFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Lesson {
   String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   List<dynamic> get topics => throw _privateConstructorUsedError;
   List<dynamic> get quizzes => throw _privateConstructorUsedError;
 
@@ -34,7 +35,8 @@ abstract class $LessonCopyWith<$Res> {
   factory $LessonCopyWith(Lesson value, $Res Function(Lesson) then) =
       _$LessonCopyWithImpl<$Res, Lesson>;
   @useResult
-  $Res call({String id, List<dynamic> topics, List<dynamic> quizzes});
+  $Res call(
+      {String id, String title, List<dynamic> topics, List<dynamic> quizzes});
 }
 
 /// @nodoc
@@ -51,6 +53,7 @@ class _$LessonCopyWithImpl<$Res, $Val extends Lesson>
   @override
   $Res call({
     Object? id = null,
+    Object? title = null,
     Object? topics = null,
     Object? quizzes = null,
   }) {
@@ -58,6 +61,10 @@ class _$LessonCopyWithImpl<$Res, $Val extends Lesson>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
       topics: null == topics
           ? _value.topics
@@ -78,7 +85,8 @@ abstract class _$$LessonImplCopyWith<$Res> implements $LessonCopyWith<$Res> {
       __$$LessonImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, List<dynamic> topics, List<dynamic> quizzes});
+  $Res call(
+      {String id, String title, List<dynamic> topics, List<dynamic> quizzes});
 }
 
 /// @nodoc
@@ -93,6 +101,7 @@ class __$$LessonImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? title = null,
     Object? topics = null,
     Object? quizzes = null,
   }) {
@@ -100,6 +109,10 @@ class __$$LessonImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
       topics: null == topics
           ? _value._topics
@@ -118,6 +131,7 @@ class __$$LessonImplCopyWithImpl<$Res>
 class _$LessonImpl implements _Lesson {
   const _$LessonImpl(
       {required this.id,
+      required this.title,
       required final List<dynamic> topics,
       required final List<dynamic> quizzes})
       : _topics = topics,
@@ -128,6 +142,8 @@ class _$LessonImpl implements _Lesson {
 
   @override
   final String id;
+  @override
+  final String title;
   final List<dynamic> _topics;
   @override
   List<dynamic> get topics {
@@ -146,7 +162,7 @@ class _$LessonImpl implements _Lesson {
 
   @override
   String toString() {
-    return 'Lesson(id: $id, topics: $topics, quizzes: $quizzes)';
+    return 'Lesson(id: $id, title: $title, topics: $topics, quizzes: $quizzes)';
   }
 
   @override
@@ -155,6 +171,7 @@ class _$LessonImpl implements _Lesson {
         (other.runtimeType == runtimeType &&
             other is _$LessonImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other._topics, _topics) &&
             const DeepCollectionEquality().equals(other._quizzes, _quizzes));
   }
@@ -164,6 +181,7 @@ class _$LessonImpl implements _Lesson {
   int get hashCode => Object.hash(
       runtimeType,
       id,
+      title,
       const DeepCollectionEquality().hash(_topics),
       const DeepCollectionEquality().hash(_quizzes));
 
@@ -184,6 +202,7 @@ class _$LessonImpl implements _Lesson {
 abstract class _Lesson implements Lesson {
   const factory _Lesson(
       {required final String id,
+      required final String title,
       required final List<dynamic> topics,
       required final List<dynamic> quizzes}) = _$LessonImpl;
 
@@ -191,6 +210,8 @@ abstract class _Lesson implements Lesson {
 
   @override
   String get id;
+  @override
+  String get title;
   @override
   List<dynamic> get topics;
   @override

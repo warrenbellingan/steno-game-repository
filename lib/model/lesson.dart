@@ -8,6 +8,7 @@ part 'lesson.g.dart';
 class Lesson with _$Lesson {
   const factory Lesson(
       {required String id,
+      required String title,
       required List topics,
       required List quizzes}) = _Lesson;
 
