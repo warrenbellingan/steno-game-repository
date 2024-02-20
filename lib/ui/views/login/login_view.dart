@@ -22,46 +22,50 @@ class LoginView extends StackedView<LoginViewModel> {
     Widget? child,
   ) {
     return GameBody(
-      body: viewModel.isBusy ? GameLoading(label: "Logging In",) :SingleChildScrollView(
-        child: Column(
-          children: [
-            GameTitleText(text: GameUIText.welcomeText),
-            SizedBox(
-              height: 10,
+      body: viewModel.isBusy
+          ? GameLoading(
+              label: "Logging In",
+            )
+          : SingleChildScrollView(
+              child: Column(
+                children: [
+                  GameTitleText(text: GameUIText.welcomeText),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  GameImage(path: GamePng.gameAuthLoginPath),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  GameTextField(
+                    controller: viewModel.emailController,
+                    label: GameUIText.emailText,
+                  ),
+                  GamePasswordTextField(
+                    controller: viewModel.passwordController,
+                    label: GameUIText.passwordText,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  GameButton(
+                    text: GameUIText.loginText,
+                    onClick: viewModel.logIn,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  GameTextButton(
+                    title: GameUIText.createNewAccText,
+                    onClick: viewModel.goToSignUp,
+                  ),
+                  GameTextButton(
+                    title: GameUIText.forgotPassText,
+                    onClick: viewModel.goToForgotPassword,
+                  ),
+                ],
+              ),
             ),
-            GameImage(path: GamePng.gameAuthLoginPath),
-            SizedBox(
-              height: 25,
-            ),
-            GameTextField(
-              controller: viewModel.emailController,
-              label: GameUIText.emailText,
-            ),
-            GamePasswordTextField(
-              controller: viewModel.passwordController,
-              label: GameUIText.passwordText,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            GameButton(
-              text: GameUIText.loginText,
-              onClick: viewModel.logIn,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            GameTextButton(
-              title: GameUIText.createNewAccText,
-              onClick: viewModel.goToSignUp,
-            ),
-            GameTextButton(
-              title: GameUIText.forgotPassText,
-              onClick: viewModel.goToForgotPassword,
-            ),
-          ],
-        ),
-      ),
     );
   }
 

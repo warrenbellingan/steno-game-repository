@@ -17,13 +17,14 @@ class SignInViewModel extends BaseViewModel {
   TextEditingController roleController = TextEditingController();
 
   Future<void> signUp() async {
-    if (passwordController.text.toString() != confirmPasswordController.text.toString() || passwordController.text.isEmpty) {
-      return  _snackBarService.showSnackbar(
+    if (passwordController.text.toString() !=
+            confirmPasswordController.text.toString() ||
+        passwordController.text.isEmpty) {
+      return _snackBarService.showSnackbar(
         message: "Password doesn't match ${passwordController.text}",
         duration: Duration(seconds: 2),
       );
-    }
-    else {
+    } else {
       setBusy(true);
       final response = await _authenticationService.signUp(
           name: nameController.text.toString(),
@@ -33,15 +34,14 @@ class SignInViewModel extends BaseViewModel {
       setBusy(false);
 
       response.fold(
-              (l) => _snackBarService.showSnackbar(
-            message: l.message,
-            duration: Duration(seconds: 2),
-          ),
-              (r) => _snackBarService.showSnackbar(
-            message: "Created Succcessfully",
-            duration: Duration(seconds: 2),
-          ));
+          (l) => _snackBarService.showSnackbar(
+                message: l.message,
+                duration: Duration(seconds: 2),
+              ),
+          (r) => _snackBarService.showSnackbar(
+                message: "Created Succcessfully",
+                duration: Duration(seconds: 2),
+              ));
     }
-
   }
 }

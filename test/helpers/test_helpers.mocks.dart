@@ -14,6 +14,8 @@ import 'package:stacked_services/stacked_services.dart' as _i3;
 import 'package:Steno_Game/exception/game_exception.dart' as _i9;
 import 'package:Steno_Game/model/user.dart' as _i10;
 import 'package:Steno_Game/services/authentication_service.dart' as _i8;
+import 'package:Steno_Game/services/image_service.dart' as _i12;
+import 'package:Steno_Game/services/shared_preference_service.dart' as _i11;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -113,7 +115,7 @@ class MockNavigationService extends _i1.Mock implements _i3.NavigationService {
     Duration? duration,
     bool? popGesture,
     int? id,
-    _i5.Curve? curve,
+    dynamic curve,
     bool? fullscreenDialog = false,
     bool? preventDuplicates = true,
     _i3.Transition? transitionClass,
@@ -149,7 +151,7 @@ class MockNavigationService extends _i1.Mock implements _i3.NavigationService {
     Duration? duration,
     bool? popGesture,
     int? id,
-    _i5.Curve? curve,
+    dynamic curve,
     bool? fullscreenDialog = false,
     bool? preventDuplicates = true,
     _i3.Transition? transitionClass,
@@ -248,7 +250,7 @@ class MockNavigationService extends _i1.Mock implements _i3.NavigationService {
     dynamic arguments,
     int? id,
     bool? opaque,
-    _i5.Curve? curve,
+    dynamic curve,
     Duration? duration,
     bool? fullscreenDialog = false,
     bool? popGesture,
@@ -965,3 +967,14 @@ class MockAuthenticationService extends _i1.Mock
         )),
       ) as _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>);
 }
+
+/// A class which mocks [SharedPreferenceService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSharedPreferenceService extends _i1.Mock
+    implements _i11.SharedPreferenceService {}
+
+/// A class which mocks [ImageService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockImageService extends _i1.Mock implements _i12.ImageService {}

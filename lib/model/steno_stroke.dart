@@ -12,5 +12,6 @@ class StenoStroke with _$StenoStroke {
     required String strokeImage,
   }) = _StenoStroke;
 
-  factory StenoStroke.fromJson(Map<String, dynamic> json) => _$StenoStrokeFromJson(json);
+  factory StenoStroke.fromJson(Map<String, dynamic> json) =>
+      _$StenoStrokeFromJson(json);
 }

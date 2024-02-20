@@ -9,6 +9,7 @@ class PlayViewModel extends BaseViewModel {
   void goToStrokePlayPage() {
     _navigationService.navigateToStrokesPlayView();
   }
+
   void goToTypingPlayPage() {
     _navigationService.navigateToTypingPlayView();
   }

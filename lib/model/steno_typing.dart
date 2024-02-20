@@ -12,5 +12,6 @@ class StenoTyping with _$StenoTyping {
     required String strokeImage,
   }) = _StenoTyping;
 
-  factory StenoTyping.fromJson(Map<String, dynamic> json) => _$StenoTypingFromJson(json);
+  factory StenoTyping.fromJson(Map<String, dynamic> json) =>
+      _$StenoTypingFromJson(json);
 }

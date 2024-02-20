@@ -27,6 +27,8 @@ import 'package:Steno_Game/ui/views/typing_play/typing_play_view.dart';
 import 'package:Steno_Game/ui/views/quiz_game_stroke/quiz_game_stroke_view.dart';
 import 'package:Steno_Game/ui/views/stroke_exercise/stroke_exercise_view.dart';
 import 'package:Steno_Game/ui/views/typing_exercise/typing_exercise_view.dart';
+import 'package:Steno_Game/services/shared_preference_service.dart';
+import 'package:Steno_Game/services/image_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -62,6 +64,8 @@ import 'package:Steno_Game/ui/views/typing_exercise/typing_exercise_view.dart';
     LazySingleton(classType: NavigationService),
     LazySingleton(
         classType: AuthenticationServiceImpl, asType: AuthenticationService),
+    LazySingleton(classType: SharedPreferenceService),
+    LazySingleton(classType: ImageService),
 // @stacked-service
   ],
   bottomsheets: [

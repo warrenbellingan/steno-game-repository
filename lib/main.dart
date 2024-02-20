@@ -27,7 +27,6 @@ class MainApp extends StatelessWidget {
         textTheme: GoogleFonts.exo2TextTheme(),
       ),
       debugShowCheckedModeBanner: false,
-
       initialRoute: Routes.startupView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
