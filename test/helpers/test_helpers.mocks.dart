@@ -115,7 +115,7 @@ class MockNavigationService extends _i1.Mock implements _i3.NavigationService {
     Duration? duration,
     bool? popGesture,
     int? id,
-    dynamic curve,
+    _i5.Curve? curve,
     bool? fullscreenDialog = false,
     bool? preventDuplicates = true,
     _i3.Transition? transitionClass,
@@ -151,7 +151,7 @@ class MockNavigationService extends _i1.Mock implements _i3.NavigationService {
     Duration? duration,
     bool? popGesture,
     int? id,
-    dynamic curve,
+    _i5.Curve? curve,
     bool? fullscreenDialog = false,
     bool? preventDuplicates = true,
     _i3.Transition? transitionClass,
@@ -250,7 +250,7 @@ class MockNavigationService extends _i1.Mock implements _i3.NavigationService {
     dynamic arguments,
     int? id,
     bool? opaque,
-    dynamic curve,
+    _i5.Curve? curve,
     Duration? duration,
     bool? fullscreenDialog = false,
     bool? popGesture,
@@ -700,7 +700,7 @@ class MockAuthenticationService extends _i1.Mock
       ) as bool);
 
   @override
-  _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>> signUp({
+  _i6.Future<_i2.Either<_i9.GameException, _i10.User>> signUp({
     required String? name,
     required String? email,
     required String? password,
@@ -717,9 +717,8 @@ class MockAuthenticationService extends _i1.Mock
             #role: role,
           },
         ),
-        returnValue:
-            _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>.value(
-                _FakeEither_0<_i9.GameException, _i2.None<dynamic>>(
+        returnValue: _i6.Future<_i2.Either<_i9.GameException, _i10.User>>.value(
+            _FakeEither_0<_i9.GameException, _i10.User>(
           this,
           Invocation.method(
             #signUp,
@@ -733,8 +732,8 @@ class MockAuthenticationService extends _i1.Mock
           ),
         )),
         returnValueForMissingStub:
-            _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>.value(
-                _FakeEither_0<_i9.GameException, _i2.None<dynamic>>(
+            _i6.Future<_i2.Either<_i9.GameException, _i10.User>>.value(
+                _FakeEither_0<_i9.GameException, _i10.User>(
           this,
           Invocation.method(
             #signUp,
@@ -747,7 +746,7 @@ class MockAuthenticationService extends _i1.Mock
             },
           ),
         )),
-      ) as _i6.Future<_i2.Either<_i9.GameException, _i2.None<dynamic>>>);
+      ) as _i6.Future<_i2.Either<_i9.GameException, _i10.User>>);
 
   @override
   _i6.Future<_i2.Either<_i9.GameException, _i10.User>> login({
@@ -972,7 +971,37 @@ class MockAuthenticationService extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockSharedPreferenceService extends _i1.Mock
-    implements _i11.SharedPreferenceService {}
+    implements _i11.SharedPreferenceService {
+  @override
+  _i6.Future<void> saveUser(_i10.User? user) => (super.noSuchMethod(
+        Invocation.method(
+          #saveUser,
+          [user],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+
+  @override
+  _i6.Future<_i10.User?> getCurrentUser() => (super.noSuchMethod(
+        Invocation.method(
+          #getCurrentUser,
+          [],
+        ),
+        returnValue: _i6.Future<_i10.User?>.value(),
+        returnValueForMissingStub: _i6.Future<_i10.User?>.value(),
+      ) as _i6.Future<_i10.User?>);
+
+  @override
+  _i6.Future<void> deleteCurrentUser() => (super.noSuchMethod(
+        Invocation.method(
+          #deleteCurrentUser,
+          [],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+}
 
 /// A class which mocks [ImageService].
 ///

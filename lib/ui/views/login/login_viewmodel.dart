@@ -1,5 +1,6 @@
 import 'package:Steno_Game/app/app.router.dart';
 import 'package:Steno_Game/services/authentication_service.dart';
+import 'package:Steno_Game/services/shared_preference_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -10,6 +11,7 @@ class LoginViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _authenticationService = locator<AuthenticationService>();
   final _snackBarService = locator<SnackbarService>();
+  final _sharedPref = locator<SharedPreferenceService>();
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -22,10 +24,10 @@ class LoginViewModel extends BaseViewModel {
     response.fold(
       (l) => _snackBarService.showSnackbar(
           message: l.message, duration: Duration(seconds: 2)),
-      (user) => _snackBarService.showSnackbar(
-        message: "Login In Successful",
-        duration: Duration(seconds: 2),
-      ),
+      (user) async {
+        await _sharedPref.saveUser(user);
+        _navigationService.replaceWithHomeView();
+    }
     );
   }
 

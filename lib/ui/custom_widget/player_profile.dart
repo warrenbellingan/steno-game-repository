@@ -3,8 +3,10 @@ import 'package:Steno_Game/ui/constants/game_png.dart';
 import 'package:flutter/material.dart';
 
 class PlayerProfile extends StatelessWidget {
-  const PlayerProfile({super.key});
+  const PlayerProfile({super.key, required this.name, required this.level});
 
+  final String name;
+  final int level;
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -25,7 +25,7 @@ class PeopleCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          PlayerProfile(),
+          PlayerProfile(name: 'Sample', level: 1,),
           AddFriend(),
         ],
       ),

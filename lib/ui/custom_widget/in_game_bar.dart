@@ -19,7 +19,7 @@ class InGameBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          PlayerProfile(),
+          PlayerProfile(name: 'Sampple', level: 1,),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.menu),

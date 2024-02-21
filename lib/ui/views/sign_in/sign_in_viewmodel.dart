@@ -1,5 +1,6 @@
+import 'package:Steno_Game/app/app.router.dart';
 import 'package:Steno_Game/services/authentication_service.dart';
-import 'package:Steno_Game/ui/constants/game_ui_text.dart';
+import 'package:Steno_Game/services/shared_preference_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -9,6 +10,8 @@ import '../../../app/app.locator.dart';
 class SignInViewModel extends BaseViewModel {
   final _authenticationService = locator<AuthenticationService>();
   final _snackBarService = locator<SnackbarService>();
+  final _navigationService = locator<NavigationService>();
+  final _sharedPref = locator<SharedPreferenceService>();
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -37,11 +40,19 @@ class SignInViewModel extends BaseViewModel {
           (l) => _snackBarService.showSnackbar(
                 message: l.message,
                 duration: Duration(seconds: 2),
-              ),
-          (r) => _snackBarService.showSnackbar(
-                message: "Created Succcessfully",
-                duration: Duration(seconds: 2),
-              ));
+              ), (user) async {
+        setBusy(true);
+        final logInResponse = await _authenticationService.login(
+            email: emailController.text, password: passwordController.text);
+        setBusy(false);
+        logInResponse.fold(
+            (l) => _snackBarService.showSnackbar(
+                message: "No User found in Logging In",
+                duration: Duration(seconds: 2)), (user) async {
+          await _sharedPref.saveUser(user);
+          _navigationService.replaceWithHomeView();
+        });
+      });
     }
   }
 }

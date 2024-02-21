@@ -6,7 +6,7 @@ import '../model/user.dart';
 abstract interface class AuthenticationService {
   bool get isLoggedIn;
 
-  Future<Either<GameException, None>> signUp(
+  Future<Either<GameException, User>> signUp(
       {required String name,
       required String email,
       required String password,

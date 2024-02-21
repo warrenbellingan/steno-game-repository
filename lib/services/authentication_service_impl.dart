@@ -52,7 +52,7 @@ class AuthenticationServiceImpl implements AuthenticationService {
   }
 
   @override
-  Future<Either<GameException, None>> signUp(
+  Future<Either<GameException, User>> signUp(
       {required String name,
       required String email,
       required String password,
@@ -66,7 +66,7 @@ class AuthenticationServiceImpl implements AuthenticationService {
       User user =
           User(id: credential.user!.uid, name: name, email: email, role: role);
       await db.collection("users").doc(credential.user!.uid).set(user.toJson());
-      return const Right(None());
+      return Right(user);
     } on FirebaseAuthException catch (e) {
       String errorMessage = e.message.toString();
       if (e.code == "weak-password") {
